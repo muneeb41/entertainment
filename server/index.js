@@ -29,13 +29,12 @@ const allowedOrigins = [  // Define allowed origins
     'http://localhost:5173' // Local development URL
   ];
   
-  app.use(cors({
-    origin: allowedOrigins,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-  }));
+app.use(cors({
+  origin: allowedOrigins,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
   
-app.use(cors(corsOptions));  // Enable CORS with the specified options
 
 
 
