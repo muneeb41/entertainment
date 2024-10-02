@@ -66,11 +66,17 @@ const TrandingCart = ({movie}) => {
         <div>
             {isBookmark?(
                 <FaBookmark className='relative top-6 left-16 text-white text-xl sm:text-3xl sm:top-8 sm:left-44 md:left-40 xl:left-56' 
-                 onClick={handleRemoveBookmark}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleRemoveBookmark();
+                }}
                 />
             ):(
               <IoBookmarkOutline className='relative top-6 left-16 text-white text-xl sm:text-3xl sm:top-8 sm:left-44 md:left-40 xl:left-56'
-              onClick={handleAddBookmark}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleAddBookmark();
+              }}
              />
             )}
              

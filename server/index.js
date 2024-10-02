@@ -22,7 +22,17 @@ dbConnection();
 
 //middleware
 app.use(express.json());
-app.use(cors())
+
+const corsOptions = {  // CORS options
+    origin: 'https://entertainment-client.onrender.com', // Allow only your client origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed HTTP methods
+    credentials: true, // Include credentials (cookies, authorization headers, etc.)
+    optionsSuccessStatus: 204, // For legacy browser support
+  };
+  
+app.use(cors(corsOptions));  // Enable CORS with the specified options
+
+
 
 // Swagger setup
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
