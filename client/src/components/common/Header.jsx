@@ -59,6 +59,7 @@ const Header = () => {
 
     const handleLogout = ()=>{
       toast.success('logout successfully');
+      setIsOpen(!isOpen)
       dispatch(logout());
       navigate('/login')
     }
@@ -148,12 +149,12 @@ const Header = () => {
          <ImCross className='text-xl text-center dark:text-white ' 
            onClick={()=>setIsOpen(!isOpen)}
          />
-        <Link to="/" className="  text-center hover:text-blue-700 dark:text-white">Home</Link>
-        <Link to="/movies" className="  text-center hover:text-blue-700 dark:text-white">Movies</Link>
-        <Link to="/tvshows" className="  text-center hover:text-blue-700 dark:text-white">TV Shows</Link>
-        <Link to="/bookmarks" className="  text-center hover:text-blue-700 dark:text-white">Bookmarks</Link>
+        <Link to="/" className="  text-center hover:text-blue-700 dark:text-white" onClick={()=>setIsOpen(!isOpen)}>Home</Link>
+        <Link to="/movies" className="  text-center hover:text-blue-700 dark:text-white"  onClick={()=>setIsOpen(!isOpen)}>Movies</Link>
+        <Link to="/tvshows" className="  text-center hover:text-blue-700 dark:text-white"  onClick={()=>setIsOpen(!isOpen)}>TV Shows</Link>
+        <Link to="/bookmarks" className="  text-center hover:text-blue-700 dark:text-white" onClick={()=>setIsOpen(!isOpen)}>Bookmarks</Link>
         {isUserLogin?(<div  className="  text-center hover:text-blue-700 dark:text-white" onClick={handleLogout}>Log out</div>):(
-          <Link to="/signup" className="  text-center hover:text-blue-700 dark:text-white">Sign up</Link>
+          <Link to="/signup" className="  text-center hover:text-blue-700 dark:text-white"  onClick={()=>setIsOpen(!isOpen)}>Sign up</Link>
         )} 
         </div>
       </div>

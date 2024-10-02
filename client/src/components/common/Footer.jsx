@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -23,16 +24,16 @@ const Footer = () => {
             <h2 className="text-xl font-semibold mb-3 text-white ">Quick Links</h2>
             <ul className=" sm:flex flex-row font-bold gap-2 md:flex-col lg:flex-row lg:flex-wrap lg:justify-center xl:justify-start">
               <li>
-                <a href="/" className="hover:text-red-600 dark:hover:text-blue-400">Home</a>
+                <Link to="/" className="hover:text-red-600 dark:hover:text-blue-400">Home</Link>
               </li>
               <li>
-                <a href="/movies" className="hover:text-red-600 dark:hover:text-blue-400">Movies</a>
+                <Link to="/movies" className="hover:text-red-600 dark:hover:text-blue-400">Movies</Link>
               </li>
               <li>
-                <a href="/tvshows" className="hover:text-red-600 dark:hover:text-blue-400">Tv Shows</a>
+                <Link to="/tvshows" className="hover:text-red-600 dark:hover:text-blue-400">Tv Shows</Link>
               </li>
               <li>
-                <a href="/bookmarks" className="hover:text-rd-600 dark:hover:text-blue-400">Bookmarks</a>
+                <Link to="/bookmarks" className="hover:text-rd-600 dark:hover:text-blue-400">Bookmarks</Link>
               </li>
               <li>
                 <a href="https://entertainment-5zis.onrender.com/api-docs" target='_blank' className="hover:text-red-600 dark:hover:text-blue-400">Api Docs</a>

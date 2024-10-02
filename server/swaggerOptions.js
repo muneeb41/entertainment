@@ -9,7 +9,7 @@ module.exports = {
     },
     servers: [
       {
-        url: "http://localhost:8000", // Replace with your actual server URL
+        url: "https://entertainment-5zis.onrender.com", //  your actual server URL
       },
     ],
     components: {
