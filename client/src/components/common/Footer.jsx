@@ -35,7 +35,7 @@ const Footer = () => {
                 <a href="/bookmarks" className="hover:text-rd-600 dark:hover:text-blue-400">Bookmarks</a>
               </li>
               <li>
-                <a href="/" className="hover:text-red-600 dark:hover:text-blue-400">Api Docs</a>
+                <a href="https://entertainment-5zis.onrender.com/api-docs" target='_blank' className="hover:text-red-600 dark:hover:text-blue-400">Api Docs</a>
               </li>
             </ul>
           </div>
