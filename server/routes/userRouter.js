@@ -12,7 +12,6 @@ const userRouter = express.Router();
 
 // User Signup Route
 userRouter.post('/signup', signup);
-
 /**
  * @swagger
  * /user/signup:
@@ -48,9 +47,9 @@ userRouter.post('/signup', signup);
  *         description: Server error.
  */
 
+
 // User Login Route
 userRouter.post('/login', login);
-
 /**
  * @swagger
  * /user/login:
@@ -95,6 +94,7 @@ userRouter.post('/login', login);
  *         description: Server error.
  */
 
+
 // User Logout Route
 userRouter.post('/logout', logout);
 
@@ -116,5 +116,6 @@ userRouter.post('/logout', logout);
  *       500:
  *         description: Server error.
  */
+
 
 module.exports = userRouter;
