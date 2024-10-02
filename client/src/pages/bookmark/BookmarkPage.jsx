@@ -4,6 +4,7 @@ import MovieBookmarks from '../../components/bookmarks/MovieBookmarks'
 import TvShowBookmarks from '../../components/bookmarks/TvShowBookmarks'
 import Footer from '../../components/common/Footer'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const BookmarkPage = () => {
   const {email} = useSelector(state=>state.user);
@@ -25,8 +26,8 @@ const BookmarkPage = () => {
            <div>
              <div><p className='text-xl text-center font-bold  mx-auto py-5 dark:text-white lg:text-3xl  lg:pb-8 '>Bookmark Page Required Authentication</p></div>
              <div className='flex flex-row justify-center gap-4 sm:gap-8'>
-              <a href="/login" className='bg-blue-500 rounded-lg box-shadow-main h-10 w-20 text-center pt-1 text-white font-bold sm:w-24'>Login</a>
-              <a href="/signup" className='bg-blue-500 rounded-lg box-shadow-main h-10 w-20 text-center pt-1 text-white font-bold sm:w-24'>Sign up</a>
+              <Link to="/login" className='bg-blue-500 rounded-lg box-shadow-main h-10 w-20 text-center pt-1 text-white font-bold sm:w-24'>Login</Link>
+              <Link to="/signup" className='bg-blue-500 rounded-lg box-shadow-main h-10 w-20 text-center pt-1 text-white font-bold sm:w-24'>Sign up</Link>
              </div>
            </div>
         </div>

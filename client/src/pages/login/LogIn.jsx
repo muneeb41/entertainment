@@ -5,12 +5,14 @@ import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/user/userSlice';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../components/common/Loading';
 
 const LogIn = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
+  const [loading,setLoading] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -22,6 +24,7 @@ const LogIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+        setLoading(true);
         const response = await serverApi.post('/user/login',formData);
         const {email , token , message} = response.data;
         if(message == 'Login successful'){
@@ -41,8 +44,16 @@ const LogIn = () => {
             toast.error('Something went wrong! Please try again.');
             console.error('Error during sign-up:', error);
           }
+    }finally{
+      setLoading(false)
     }
   };
+
+  if(loading) return (
+    <div className='flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900'>
+       <Loading />
+    </div>
+  )
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900 transition-all">

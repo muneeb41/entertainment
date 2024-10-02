@@ -26,7 +26,8 @@ const InfiniteScrolling = ({type}) => {
         if (response.data.results.length === 0) {
           setHasMore(false); // No more data
         } else {
-          setData((prev) => [...prev, ...response.data.results]); // Append new data
+          const dataWithImage = response.data.results.filter((item)=> item.poster_path !== null);
+          setData((prev) => [...prev, ...dataWithImage]); // Append new data
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -94,10 +95,11 @@ const InfiniteScrolling = ({type}) => {
                   </div>
                 ))
               }
-              {loading && <Loading  /> }
+              
               {!hasMore && <div>there is no more data to fetch </div> }
             </div>
           </div>
+          {loading && <Loading  /> }
         </div>
   )
 }

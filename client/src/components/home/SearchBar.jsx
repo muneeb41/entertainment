@@ -53,7 +53,8 @@ const SearchBar = ({type,text}) => {
       const response = await axios.get(
         `https://api.themoviedb.org/3/search/${type}?api_key=${apiKey}&query=${query}`
       );
-      SetSearchData(response.data.results);
+      const dataWithImage = response.data.results.filter((item)=> item.poster_path !== null);
+      SetSearchData(dataWithImage);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

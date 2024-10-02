@@ -5,6 +5,7 @@ import serverApi from '../../api/serverApi';
 import { useDispatch  } from 'react-redux';
 import { signup } from '../../redux/user/userSlice';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../components/common/Loading';
 
 
 const SignUp = () => {
@@ -13,6 +14,7 @@ const SignUp = () => {
     password: '',
     confirmPassword: '',
   });
+  const [loading,setLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -29,6 +31,7 @@ const SignUp = () => {
     }
   
     try {
+      setLoading(true);
       const response = await serverApi.post('/user/signup', formData);
       const { message ,email , token } = response.data;
   
@@ -54,8 +57,16 @@ const SignUp = () => {
             toast.error('Something went wrong! Please try again.');
             console.error('Error during sign-up:', error);
           }
+    }finally{
+      setLoading(false);
     }
   };
+
+  if(loading) return (
+    <div className='flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900'>
+       <Loading />
+    </div>
+  )
   
 
   return (

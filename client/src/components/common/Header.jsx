@@ -15,6 +15,7 @@ import { toast } from 'react-toastify';
 import { TfiMenu } from "react-icons/tfi";
 import { ImCross } from "react-icons/im";
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -147,12 +148,12 @@ const Header = () => {
          <ImCross className='text-xl text-center dark:text-white ' 
            onClick={()=>setIsOpen(!isOpen)}
          />
-        <a href="/" className="  text-center hover:text-blue-700 dark:text-white">Home</a>
-        <a href="/movies" className="  text-center hover:text-blue-700 dark:text-white">Movies</a>
-        <a href="/tvshows" className="  text-center hover:text-blue-700 dark:text-white">TV Shows</a>
-        <a href="/bookmarks" className="  text-center hover:text-blue-700 dark:text-white">Bookmarks</a>
+        <Link to="/" className="  text-center hover:text-blue-700 dark:text-white">Home</Link>
+        <Link to="/movies" className="  text-center hover:text-blue-700 dark:text-white">Movies</Link>
+        <Link to="/tvshows" className="  text-center hover:text-blue-700 dark:text-white">TV Shows</Link>
+        <Link to="/bookmarks" className="  text-center hover:text-blue-700 dark:text-white">Bookmarks</Link>
         {isUserLogin?(<div  className="  text-center hover:text-blue-700 dark:text-white" onClick={handleLogout}>Log out</div>):(
-          <a href="/signup" className="  text-center hover:text-blue-700 dark:text-white">Sign up</a>
+          <Link to="/signup" className="  text-center hover:text-blue-700 dark:text-white">Sign up</Link>
         )} 
         </div>
       </div>
